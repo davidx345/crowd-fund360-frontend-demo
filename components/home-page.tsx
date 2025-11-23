@@ -6,9 +6,10 @@ import { ArrowRight, CheckCircle2, Eye, Zap, TrendingUp } from "lucide-react"
 
 interface HomePageProps {
   onNavigate: (page: any) => void
+  currentUser: { type: string; name: string } | null
 }
 
-export default function HomePage({ onNavigate }: HomePageProps) {
+export default function HomePage({ onNavigate, currentUser }: HomePageProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -24,12 +25,34 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               impact-driven.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" onClick={() => onNavigate("projects")} className="gap-2">
-                Explore Projects <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline" onClick={() => onNavigate("creator-dashboard")}>
-                Start a Project
-              </Button>
+              {currentUser ? (
+                <>
+                  {currentUser.type === "creator" && (
+                    <Button size="lg" onClick={() => onNavigate("creator-dashboard")} className="gap-2">
+                      Go to Dashboard <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  )}
+                  {currentUser.type === "donor" && (
+                    <Button size="lg" onClick={() => onNavigate("projects")} className="gap-2">
+                      Explore Projects <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  )}
+                  {currentUser.type === "admin" && (
+                    <Button size="lg" onClick={() => onNavigate("admin-dashboard")} className="gap-2">
+                      Go to Admin Panel <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  )}
+                </>
+              ) : (
+                <>
+                  <Button size="lg" onClick={() => onNavigate("auth")} className="gap-2">
+                    Explore Projects <ArrowRight className="w-4 h-4" />
+                  </Button>
+                  <Button size="lg" variant="outline" onClick={() => onNavigate("auth")}>
+                    Start a Project
+                  </Button>
+                </>
+              )}
             </div>
           </div>
 
@@ -141,7 +164,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     <div className="w-full bg-border rounded-full h-2">
                       <div
                         className="bg-primary h-2 rounded-full"
-                        style={{ width: `${(project.raised / project.target) * 100}%` }}
+                        style={{
+                          width: `${(project.raised / project.target) * 100}%`,
+                        }}
                       />
                     </div>
                   </div>
@@ -166,9 +191,15 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             Whether you're a community innovator with a big idea or a supporter looking to help, CrowdFund360 is your
             platform.
           </p>
-          <Button size="lg" onClick={() => onNavigate("projects")} className="gap-2">
-            Get Started <ArrowRight className="w-4 h-4" />
-          </Button>
+          {currentUser ? (
+            <Button size="lg" onClick={() => onNavigate("projects")} className="gap-2">
+              Get Started <ArrowRight className="w-4 h-4" />
+            </Button>
+          ) : (
+            <Button size="lg" onClick={() => onNavigate("auth")} className="gap-2">
+              Get Started <ArrowRight className="w-4 h-4" />
+            </Button>
+          )}
         </div>
       </section>
     </div>

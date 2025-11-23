@@ -4,21 +4,21 @@ import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Search, Filter, Heart } from "lucide-react"
-import { DEMO_PROJECTS } from "@/lib/demo-data"
 
 interface ProjectListingPageProps {
   onNavigate: (page: any) => void
   onSelectProject: (id: string) => void
+  projects: any[]
 }
 
-export default function ProjectListingPage({ onNavigate, onSelectProject }: ProjectListingPageProps) {
+export default function ProjectListingPage({ onNavigate, onSelectProject, projects }: ProjectListingPageProps) {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [sortBy, setSortBy] = useState("trending")
 
   const categories = ["All", "Education", "Healthcare", "Environment", "Technology", "Community"]
 
-  const filteredProjects = DEMO_PROJECTS.filter((project) => {
+  const filteredProjects = projects.filter((project) => {
     const matchesSearch =
       project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       project.description.toLowerCase().includes(searchTerm.toLowerCase())

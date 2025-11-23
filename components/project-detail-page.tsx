@@ -3,17 +3,18 @@
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { DEMO_PROJECTS, DEMO_UPDATES } from "@/lib/demo-data"
+import { DEMO_UPDATES } from "@/lib/demo-data"
 import { Share2, CheckCircle2, Users, ArrowLeft } from "lucide-react"
 
 interface ProjectDetailPageProps {
   projectId: string
   onNavigate: (page: any) => void
   onDonate: () => void
+  projects: any[]
 }
 
-export default function ProjectDetailPage({ projectId, onNavigate, onDonate }: ProjectDetailPageProps) {
-  const project = DEMO_PROJECTS.find((p) => p.id === projectId)
+export default function ProjectDetailPage({ projectId, onNavigate, onDonate, projects }: ProjectDetailPageProps) {
+  const project = projects.find((p) => p.id === projectId)
   const projectUpdates = DEMO_UPDATES.filter((u) => u.projectId === projectId)
   const [activeTab, setActiveTab] = useState<"about" | "updates" | "comments">("about")
   const [newComment, setNewComment] = useState("")
