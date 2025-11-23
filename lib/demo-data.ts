@@ -1,0 +1,193 @@
+export const DEMO_PROJECTS = [
+  {
+    id: "1",
+    title: "Clean Water Initiative",
+    category: "Healthcare",
+    description:
+      "Building sustainable water systems for underserved communities in rural areas. This initiative focuses on installing solar-powered water purification units that will serve over 5,000 people annually.",
+    creator: "Sarah Johnson",
+    image: "/clean-water-project.jpg",
+    fundingGoal: 50000,
+    raised: 38000,
+    donors: 342,
+    daysLeft: 18,
+    createdDate: "2025-01-01",
+    milestones: [
+      "Complete site survey and planning",
+      "Install water purification units",
+      "Train local technicians",
+      "Set up community management system",
+    ],
+    budget: [
+      { category: "Equipment", amount: 25000 },
+      { category: "Installation", amount: 15000 },
+      { category: "Training", amount: 7000 },
+      { category: "Management", amount: 3000 },
+    ],
+  },
+  {
+    id: "2",
+    title: "Youth Tech Education",
+    category: "Education",
+    description:
+      "Providing free coding and digital skills training to 500 underprivileged youth. Our program combines classroom learning with hands-on projects to create job-ready graduates.",
+    creator: "James Chen",
+    image: "/tech-education.jpg",
+    fundingGoal: 30000,
+    raised: 28500,
+    donors: 215,
+    daysLeft: 12,
+    createdDate: "2025-01-05",
+    milestones: [
+      "Recruit and train instructors",
+      "Set up 3 learning centers",
+      "Launch coding bootcamp",
+      "Help graduates find jobs",
+    ],
+    budget: [
+      { category: "Instructors", amount: 15000 },
+      { category: "Equipment", amount: 8000 },
+      { category: "Materials", amount: 4000 },
+      { category: "Placement Support", amount: 3000 },
+    ],
+  },
+  {
+    id: "3",
+    title: "Urban Garden Project",
+    category: "Environment",
+    description:
+      "Creating green spaces in the city through community gardens. This project will transform 10 vacant lots into thriving gardens, providing fresh produce to local families.",
+    creator: "Maria Rodriguez",
+    image: "/urban-garden.jpg",
+    fundingGoal: 15000,
+    raised: 14200,
+    donors: 128,
+    daysLeft: 5,
+    createdDate: "2024-12-15",
+    milestones: [
+      "Secure land permissions",
+      "Prepare soil and infrastructure",
+      "Plant initial crops",
+      "Launch community programs",
+    ],
+    budget: [
+      { category: "Land Prep", amount: 5000 },
+      { category: "Seeds & Plants", amount: 3000 },
+      { category: "Infrastructure", amount: 4000 },
+      { category: "Community Program", amount: 3000 },
+    ],
+  },
+  {
+    id: "4",
+    title: "Women Entrepreneurship Hub",
+    category: "Community",
+    description:
+      "Empowering 200 women entrepreneurs with business training, mentorship, and startup capital. We provide the tools and support needed to transform ideas into sustainable businesses.",
+    creator: "Amara Okonkwo",
+    image: "/women-business.jpg",
+    fundingGoal: 40000,
+    raised: 22000,
+    donors: 189,
+    daysLeft: 25,
+    createdDate: "2024-12-20",
+    milestones: [
+      "Establish physical hub",
+      "Recruit 200 entrepreneurs",
+      "Deliver business training",
+      "Distribute startup capital",
+    ],
+    budget: [
+      { category: "Hub Setup", amount: 15000 },
+      { category: "Training Program", amount: 10000 },
+      { category: "Mentorship", amount: 8000 },
+      { category: "Administration", amount: 7000 },
+    ],
+  },
+  {
+    id: "5",
+    title: "Mental Health Awareness Campaign",
+    category: "Healthcare",
+    description:
+      "Community-wide campaign to reduce stigma around mental health. We will conduct awareness workshops, provide counseling resources, and train peer supporters.",
+    creator: "Dr. Kwesi Mensah",
+    image: "/mental-health.jpg",
+    fundingGoal: 20000,
+    raised: 16800,
+    donors: 156,
+    daysLeft: 15,
+    createdDate: "2025-01-02",
+    milestones: [
+      "Develop educational materials",
+      "Conduct awareness workshops",
+      "Train peer counselors",
+      "Launch helpline service",
+    ],
+    budget: [
+      { category: "Materials", amount: 5000 },
+      { category: "Workshop Delivery", amount: 7000 },
+      { category: "Counselor Training", amount: 5000 },
+      { category: "Helpline Setup", amount: 3000 },
+    ],
+  },
+  {
+    id: "6",
+    title: "Renewable Energy Initiative",
+    category: "Environment",
+    description:
+      "Installing solar panels in 50 schools across the region. This project reduces energy costs and provides hands-on STEM learning opportunities for students.",
+    creator: "Isaac Okoro",
+    image: "/solar-panels.jpg",
+    fundingGoal: 75000,
+    raised: 55000,
+    donors: 402,
+    daysLeft: 30,
+    createdDate: "2024-12-10",
+    milestones: [
+      "Complete site assessments",
+      "Procure solar equipment",
+      "Install systems at 50 schools",
+      "Train maintenance teams",
+    ],
+    budget: [
+      { category: "Solar Equipment", amount: 50000 },
+      { category: "Installation", amount: 15000 },
+      { category: "Training", amount: 7000 },
+      { category: "Monitoring Systems", amount: 3000 },
+    ],
+  },
+]
+
+export const DEMO_UPDATES = [
+  {
+    id: "u1",
+    projectId: "1",
+    title: "Site preparation completed",
+    content:
+      "We have successfully completed the survey of all project sites and received all necessary permits. Construction will begin next week.",
+    date: "2025-01-20",
+  },
+  {
+    id: "u2",
+    projectId: "1",
+    title: "Community training began",
+    content:
+      "Local technicians are now being trained on water system maintenance. We expect to have 20 fully trained staff by month end.",
+    date: "2025-01-18",
+  },
+  {
+    id: "u3",
+    projectId: "2",
+    title: "First cohort enrolled",
+    content:
+      "We are excited to announce that 120 students have enrolled in our first coding bootcamp cohort! Classes start Monday.",
+    date: "2025-01-19",
+  },
+  {
+    id: "u4",
+    projectId: "3",
+    title: "Nearly funded!",
+    content:
+      "Thanks to amazing community support, we are at 94% of our funding goal. Just a bit more to start planting next week.",
+    date: "2025-01-17",
+  },
+]
